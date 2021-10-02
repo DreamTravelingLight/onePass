@@ -8,7 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yoonzm/react-native-ali-onepass.git"
+    "url": "git+https://github.com/DreamTravelingLight/react-native-ali-onepass-bnq.git",
+        "baseUrl": "https://github.com/DreamTravelingLight/react-native-ali-onepass-bnq.git"
   },
   "keywords": [
     "react-native",

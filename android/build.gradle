@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven() { url 'https://maven.aliyun.com/repository/releases' }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.4' //2.3.3
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29        //23
+    buildToolsVersion "29.0.2"  //26.0.1
+
+    defaultConfig {
+        minSdkVersion 19        //19
+        targetSdkVersion 29     //22
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    sourceSets.main.jniLibs.srcDirs = ['libs']
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven() { url 'https://maven.aliyun.com/repository/releases' }
+    maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.facebook.react:react-native:+'
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'            //23.2.1
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation(name: 'auth_number_product-2.12.3-log-online-standard-release', ext: 'aar')
+    implementation(name: 'crashshield-2.1.2-release', ext: 'aar')
+    implementation(name: 'logger-2.1.2-release', ext: 'aar')
+    implementation(name: 'main-2.1.2-release', ext: 'aar')
+    implementation 'com.alibaba:fastjson:1.1.71.android' // 配置对gson的依赖
+}

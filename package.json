@@ -1,0 +1,35 @@
+{
+  "name": "react-native-ali-onepass",
+  "version": "2.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test specified \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonzm/react-native-ali-onepass.git"
+  },
+  "keywords": [
+    "react-native",
+    "ali",
+    "onepass",
+    "quickpass",
+    "auth",
+    "onekey",
+    "login"
+  ],
+  "files": [
+    "android/",
+    "ios/",
+    "index.js",
+    "RNAliOnepass.podspec",
+    "package.json",
+    "README.md"
+  ],
+  "author": "yoonzm",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}

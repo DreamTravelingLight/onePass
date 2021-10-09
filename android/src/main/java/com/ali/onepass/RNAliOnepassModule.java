@@ -7,9 +7,10 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Surface;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -36,6 +37,8 @@ import com.mobile.auth.gatewayauth.ui.AbstractPnsViewDelegate;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.Console;
 
 
 public class RNAliOnepassModule extends ReactContextBaseJavaModule implements TokenResultListener {
@@ -78,6 +81,7 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
         phoneNumberAuthHelper = PhoneNumberAuthHelper.getInstance(reactContext, this);
         phoneNumberAuthHelper.setAuthSDKInfo(secretInfo);
         mPromise = promise;
+
         phoneNumberAuthHelper.setUIClickListener(new AuthUIControlClickListener() {
             @Override
             public void onClick(String code, Context context, String jsonString) {
@@ -89,6 +93,7 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
                 } catch (JSONException e) {
                     jsonObj = new JSONObject();
                 }
+                Log.e("监听操作", jsonString);
 //                Toast.makeText(context, R.string.custom_toast, Toast.LENGTH_SHORT).show();
                 switch (code) {
                     //点击授权页默认样式的返回按钮
@@ -112,8 +117,6 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
                                 sendEvent("pageClickEvents", writableMap);
                             }
                         });
-
-
                         break;
                     //点击一键登录按钮会发出此回调
                     //当协议栏没有勾选时 点击按钮会有默认toast 如果不需要或者希望自定义内容 setLogBtnToastHidden(true)隐藏默认Toast
@@ -143,6 +146,7 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
             }
         });
 
+
         promise.resolve("");
     }
 
@@ -160,6 +164,7 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
     @ReactMethod
     public void checkEnvAvailable(final Promise promise) {
         if (!checkInit(promise)) {
+            promise.resolve(false);
             return;
         }
         boolean available = phoneNumberAuthHelper.checkEnvAvailable();
@@ -177,9 +182,11 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
             writableMap.putString("msg", tokenRet.getMsg());
             writableMap.putInt("requestCode", tokenRet.getRequestCode());
             writableMap.putString("token", tokenRet.getToken());
+            writableMap.putInt("showType",showType);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Log.e("onTokenSuccess","onTokenSuccess  发送");
         sendEvent("onTokenSuccess", writableMap);
     }
 
@@ -197,7 +204,14 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
         } catch (Exception e) {
             e.printStackTrace();
         }
-        sendEvent("onTokenFailed", writableMap);
+        if (tokenRet.getCode().equals("700001")){
+//            切换其他登录方式
+            Log.e(TAG,"切换其他登录方式");
+//            writableMap.putString("loginType", "weixin_icon_black");
+            sendEvent("pageClickEvents", writableMap);
+        }else {
+            sendEvent("onTokenFailed", writableMap);
+        }
         if (tokenRet.getCode().equals("600008")){
             hideLoginLoading(mPromise);
             Toast.makeText(reactContext, tokenRet.getMsg(), Toast.LENGTH_SHORT).show();
@@ -247,6 +261,7 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
             this.setDialogUIConfig(config,promise);
         }
 //
+
         promise.resolve("");
     }
 
@@ -313,17 +328,11 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
         if (!checkInit(promise)) {
             return;
         }
-//        int authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
-//        if (Build.VERSION.SDK_INT == 26) {
-//            authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_BEHIND;
-//        }
-//        int screenHeightDp = AppUtils.px2dp(reactContext, AppUtils.getPhoneHeightPixels(reactContext));
-//        int screenWidthDp = AppUtils.px2dp(reactContext, AppUtils.getPhoneWidthPixels(reactContext));
-//        mScreenWidthDp = screenWidthDp;
-//        mScreenHeightDp = screenHeightDp;
 
-
-        updateScreenSize(0);
+        int authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
+        if (Build.VERSION.SDK_INT == 26) {
+            authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_BEHIND;
+        }
 
         phoneNumberAuthHelper.removeAuthRegisterXmlConfig();
         phoneNumberAuthHelper.removeAuthRegisterViewConfig();
@@ -334,26 +343,13 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
         final int logBtnOffsetY = unit * 3;
 
         phoneNumberAuthHelper.addAuthRegisterXmlConfig(new AuthRegisterXmlConfig.Builder()
-                .setLayout(R.layout.custom_switch_other, new AbstractPnsViewDelegate() {
-                    @Override
-                    public void onViewCreated(View view) {
-//                        findViewById(R.id.tv_title).setVisibility(View.GONE);
-
-//                        int iconTopMargin = AppUtils.dp2px(getContext(), logBtnOffsetY + 50);
-//                        View iconContainer = findViewById(R.id.container_other);
-//                        RelativeLayout.LayoutParams iconLayout = (RelativeLayout.LayoutParams) iconContainer.getLayoutParams();
-//                        iconLayout.topMargin = unit+100;
-////                        iconLayout.bottomMargin=100;
-//                        iconLayout.width = AppUtils.dp2px(getContext(), mScreenWidthDp);
-                    }
-                })
-                .build());
-
-        phoneNumberAuthHelper.addAuthRegisterXmlConfig(new AuthRegisterXmlConfig.Builder()
                 .setLayout(R.layout.custom_land_dialog, new AbstractPnsViewDelegate() {
                     @Override
                     public void onViewCreated(View view) {
-//                        findViewById(R.id.tv_title).setVisibility(View.GONE);
+//                        String showThirtyLogin = config.getString(methodName2KeyName("setCustomState"));
+//                        if (showThirtyLogin.equals("2")){
+//                            findViewById(R.id.thirty_login_view).setVisibility(View.GONE);
+//                        }
                         findViewById(R.id.container_icon).setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -370,6 +366,15 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
 //                                phoneNumberAuthHelper.quitLoginPage();
                             }
                         });
+
+                        findViewById(R.id.full_alert_cancel_action).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                phoneNumberAuthHelper.quitLoginPage();
+                            }
+                        });
+
                         int iconTopMargin = AppUtils.dp2px(getContext(), logBtnOffsetY + 50);
                         View iconContainer = findViewById(R.id.container_icon);
                         RelativeLayout.LayoutParams iconLayout = (RelativeLayout.LayoutParams) iconContainer.getLayoutParams();
@@ -379,9 +384,22 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
                     }
                 })
                 .build());
+
+        int screenHeight = this.getCurrentActivity().getWindowManager().getDefaultDisplay().getHeight();
+        Log.i("获取屏幕高度", String.valueOf(screenHeight));
+
+        int height = screenHeight/3;
+        WindowManager wm = (WindowManager) this.reactContext.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        if (wm != null) {
+            wm.getDefaultDisplay().getMetrics(outMetrics);
+            height = (int) (outMetrics.heightPixels/outMetrics.scaledDensity);
+        }
+
+
         AuthUIConfig.Builder builder = new AuthUIConfig.Builder();
         setSloganUI(builder, config);
-        setNavBarUI(builder, config);
+//        setNavBarUI(builder, config);
         setLogBtnUI(builder, config);
         setSwitchAccUI(builder, config);
         setStatusBarUI(builder, config);
@@ -389,11 +407,15 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
         setNumberUI(builder, config);
         setPrivacyUI(builder, config);
         setOtherUI(builder, config);
+        builder.setDialogHeight(height);
+        builder.setDialogBottom(true);
+        builder.setDialogOffsetY(5);
+
+        builder.setWebNavColor(Color.parseColor("#ffffff"));
+        builder.setWebNavTextColor(Color.parseColor("#333333"));
         phoneNumberAuthHelper.setAuthUIConfig(builder.create());
         promise.resolve("");
     }
-
-
 
     // dialog登录
     @ReactMethod
@@ -406,42 +428,6 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
         Log.i("2222222>>>>>", String.valueOf(mUIConfig));
         assert mUIConfig != null;
         mUIConfig.configAuthPage();
-
-
-//        phoneNumberAuthHelper.removeAuthRegisterXmlConfig();
-//        phoneNumberAuthHelper.removeAuthRegisterViewConfig();
-//        int authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
-//        if (Build.VERSION.SDK_INT == 26) {
-//            authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_BEHIND;
-//        }
-//        updateScreenSize(authPageOrientation);
-//        int dialogWidth = (int) (mScreenWidthDp * 0.8f);
-//        int dialogHeight = (int) (mScreenHeightDp * 0.65f);
-//        int logBtnOffset = dialogHeight / 2;
-////
-//        AuthUIConfig.Builder builder = new AuthUIConfig.Builder();
-//        setSloganUI(builder, config);
-//        setNavBarUI(builder, config);
-//        setLogBtnUI(builder, config);
-//        setSwitchAccUI(builder, config);
-//        setStatusBarUI(builder, config);
-//        setLogoUI(builder, config);
-//        setNumberUI(builder, config);
-//        setPrivacyUI(builder, config);
-//        setOtherUI(builder, config);
-//
-//        setDialogUIHeight(builder, config, dialogHeight);
-//        builder.setLogBtnWidth(dialogWidth - 30)
-////                .setAuthPageActIn("in_activity", "out_activity")
-////                .setAuthPageActOut("in_activity", "out_activity")
-//                .setDialogWidth(dialogWidth)
-////                .setDialogHeight(dialogHeight)
-//                .setDialogBottom(false)
-//                //.setDialogAlpha(82)
-////                .setLogoImgPath("ic_launcher")
-//                .setScreenOrientation(authPageOrientation);
-//
-//        phoneNumberAuthHelper.setAuthUIConfig(builder.create());
         promise.resolve("");
     }
 
@@ -469,7 +455,8 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
 //            .setNavHidden(false)
 //            .setNavColor(Color.parseColor("#FFA346"))
 //            .setNavReturnImgPath("icon_close")
-                        .setWebNavColor(Color.parseColor("#FFA346"))
+                        .setWebNavColor(Color.parseColor("#ffffff"))
+                        .setWebNavTextColor(Color.parseColor("#191919"))
                         .setAuthPageActIn("in_activity", "out_activity")
                         .setAuthPageActOut("in_activity", "out_activity")
                         .setVendorPrivacyPrefix("《")
@@ -496,7 +483,7 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
                         .setDialogHeight(dialogHeight)
                         .setDialogBottom(false)
 //            .setDialogAlpha(82)
-                        .setScreenOrientation(authPageOrientation)
+//                        .setScreenOrientation(authPageOrientation)
                         .create()
         );
     }
@@ -751,7 +738,11 @@ public class RNAliOnepassModule extends ReactContextBaseJavaModule implements To
      * 其他
      */
     private void setOtherUI(AuthUIConfig.Builder builder, ReadableMap config) {
-
+//        int authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
+//        if (Build.VERSION.SDK_INT == 26) {
+//            authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_BEHIND;
+//        }
+//        builder.setScreenOrientation(authPageOrientation);
     }
 
     private void sendEvent(String eventName, WritableMap params) {

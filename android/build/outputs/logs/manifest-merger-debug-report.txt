@@ -1,68 +1,72 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
+ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
+INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
 	package
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:2:11-36
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:3:5-30
 		INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
 		INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
 		INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:2:5-51
 	android:versionCode
 		INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-33:12
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:1-49:12
 		INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:1:11-69
 application
-ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:3:5-32:19
+ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:5:5-48:19
 activity#com.mobile.auth.gatewayauth.LoginAuthActivity
-ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:9:9-14:42
-	android:launchMode
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:14:9-39
-	android:exported
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:12:17-41
-	android:configChanges
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:11:17-78
-	android:theme
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:13:17-63
-	android:name
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:10:17-77
-activity#com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity
-ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:16:9-21:54
+ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:19:9-26:15
 	android:screenOrientation
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:21:17-51
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:25:13-47
 	android:launchMode
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:20:17-47
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:22:13-43
 	android:exported
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:19:17-41
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:21:13-37
 	android:configChanges
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:18:17-78
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:20:13-74
+	android:theme
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:24:13-59
 	android:name
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:17:17-88
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:23:13-73
+activity#com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity
+ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:30:9-35:54
+	android:screenOrientation
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:35:17-51
+	android:launchMode
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:34:17-47
+	android:exported
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:33:17-41
+	android:configChanges
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:32:17-78
+	android:name
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:31:17-88
 activity#com.cmic.sso.sdk.activity.LoginAuthActivity
-ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:23:9-27:50
+ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:37:9-42:19
 	android:launchMode
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:27:17-47
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:41:13-43
 	android:exported
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:26:17-41
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:40:17-41
 	android:configChanges
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:25:17-78
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:39:17-78
 	android:name
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:24:17-75
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:38:17-75
 meta-data#android.max_aspect
-ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:29:9-31:35
+ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:45:9-47:35
 	android:value
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:31:13-32
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:47:13-32
 	android:name
-		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:30:13-46
+		ADDED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:46:13-46
 uses-sdk
 INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml

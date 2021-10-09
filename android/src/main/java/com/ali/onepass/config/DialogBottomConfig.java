@@ -97,7 +97,8 @@ public class DialogBottomConfig extends BaseUIConfig {
                 .setPrivacyTextSize(11)
                 .setPrivacyBefore("我已阅读并同意")
                 .setPrivacyEnd("，未注册的手机号登录时将自动注册")
-                .setWebViewStatusBarColor(Color.TRANSPARENT)
+                .setWebNavColor(Color.parseColor("#ffffff"))
+                .setWebNavTextColor(Color.parseColor("#333333"))
 
 //                .setNavHidden(true)
                 .setNavText("免费预约")
@@ -127,14 +128,14 @@ public class DialogBottomConfig extends BaseUIConfig {
                 .setLogBtnTextSizeDp(18)
                 .setLogBtnBackgroundPath("login_btn_bg")
 
-                .setPageBackgroundPath("dialog_page_background")
-                .setAuthPageActIn("in_activity", "out_activity")
-                .setAuthPageActOut("in_activity", "out_activity")
+//                .setPageBackgroundPath("dialog_page_background")
+//                .setAuthPageActIn("in_activity", "out_activity")
+//                .setAuthPageActOut("in_activity", "out_activity")
                 .setVendorPrivacyPrefix("《")
                 .setVendorPrivacySuffix("》")
                 .setDialogHeight(dialogHeight)
                 .setDialogBottom(true)
-                .setScreenOrientation(authPageOrientation)
+//                .setScreenOrientation(authPageOrientation)
                 .create());
     }
 

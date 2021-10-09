@@ -59,6 +59,7 @@ RCT_EXPORT_METHOD(init:(NSString *)secretInfo resolve:(RCTPromiseResolveBlock)re
 // 检查认证环境 第一次或者切换网络后需要重新调用
 RCT_EXPORT_METHOD(checkEnvAvailable:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
     if(![self checkInit:reject]){
+        reject(@"bnqInitError", @"checkInit初始化失败，不满足一键登录条件", nil);
         return;
     }
     [tXCommonHandler checkEnvAvailableWithComplete:^(NSDictionary * _Nullable resultDic) {
@@ -114,7 +115,8 @@ RCT_EXPORT_METHOD(onePass:(NSDictionary *)config showType:(NSUInteger)type resol
             [self sendEventWithName:@"pageDrawSuccess" body:@{
                                                                      @"msg": msg!=nil ? msg: @"",
                                                                      @"code": resultCode!=nil?resultCode:@"",
-                                                       @"token": token!=nil ? token : @""
+                                                       @"token": token!=nil ? token : @"",
+                                                                     @"showType":[NSString stringWithFormat:@"%lu",(unsigned long)type]
                                                        }];
         } else if ([PNSCodeLoginControllerClickCancel isEqualToString:resultCode] ||
                    [PNSCodeLoginControllerClickChangeBtn isEqualToString:resultCode] ||
@@ -139,6 +141,7 @@ RCT_EXPORT_METHOD(onePass:(NSDictionary *)config showType:(NSUInteger)type resol
                                                                          @"msg": msg!=nil ? msg: @"",
                                                                          @"code": resultCode!=nil?resultCode:@"",
                                                            @"token": token!=nil ? token : @"",
+                                                                         @"showType":[NSString stringWithFormat:@"%lu",(unsigned long)type]
     //                                                                     @"isCheck":checkStatus
                                                            }];
             }
@@ -150,7 +153,8 @@ RCT_EXPORT_METHOD(onePass:(NSDictionary *)config showType:(NSUInteger)type resol
             [self sendEventWithName:@"onTokenSuccess" body:@{
                                                                      @"msg": msg!=nil ? msg: @"",
                                                                      @"code": resultCode!=nil?resultCode:@"",
-                                                       @"token": token!=nil ? token : @""
+                                                       @"token": token!=nil ? token : @"",
+                                                                     @"showType":[NSString stringWithFormat:@"%lu",(unsigned long)type]
                                                        }];
         } else {
             NSLog(@"获取LoginToken或拉起授权页失败回调：%@", resultDic);

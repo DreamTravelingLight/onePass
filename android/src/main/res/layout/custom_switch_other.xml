@@ -15,6 +15,7 @@
 <!--        android:layout_marginRight="48dp"-->
 <!--        android:layout_marginLeft="48dp"-->
 <!--        >-->
+
         <View
             android:layout_width="60dp"
             android:layout_height="1dp"

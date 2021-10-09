@@ -9,9 +9,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginRight="48dp"
+
         android:layout_marginLeft="48dp"
         >
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,6 +20,7 @@
             android:text="限时免费"
             android:layout_marginTop="68dp"
             android:textStyle="bold"
+
             />
         <TextView
             android:layout_width="wrap_content"
@@ -27,7 +28,6 @@
             android:textColor="#999999"
             android:textSize="12sp"
             android:layout_marginTop="100dp"
-
             android:text="我们将通知客服尽快与你联系，沟通装修细节"
             />
 

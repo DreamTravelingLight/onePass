@@ -1,68 +1,81 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.ali.onepass"
-4    android:versionCode="1"
-5    android:versionName="1.0" >
-6
-7    <uses-sdk
-8        android:minSdkVersion="19"
-8-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
-9        android:targetSdkVersion="29" />
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.ali.onepass"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="19"
 9-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
-10
-11    <application>
-11-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:3:5-32:19
-12
-13        <!-- 联通电信授权页 -->
-14        <!-- 如果不需要使用窗口模式，不要使用authsdk_activity_dialog主题，会出现异常动画 -->
-15        <!--
-16            如果需要使用authsdk_activity_dialog主题，则screenOrientation一定不能指定明确的方向，
-17               比如portrait、sensorPortrait，在8.0的系统上不允许窗口模式指定orientation，会发生crash，需要指定为behind，
-18               然后在授权页的前一个页面指定具体的orientation
-19        -->
-20        <activity
-20-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:9:9-14:42
-21            android:name="com.mobile.auth.gatewayauth.LoginAuthActivity"
-21-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:10:17-77
-22            android:configChanges="orientation|keyboardHidden|screenSize"
-22-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:11:17-78
-23            android:exported="false"
-23-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:12:17-41
-24            android:launchMode="singleTop"
-24-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:14:9-39
-25            android:theme="@style/authsdk_activity_dialog" />
-25-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:13:17-63
-26        <!-- 协议页面webview -->
-27        <activity
-27-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:16:9-21:54
-28            android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity"
-28-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:17:17-88
-29            android:configChanges="orientation|keyboardHidden|screenSize"
-29-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:18:17-78
-30            android:exported="false"
-30-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:19:17-41
-31            android:launchMode="singleTop"
-31-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:20:17-47
-32            android:screenOrientation="behind" />
-32-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:21:17-51
-33        <!-- 移动授权页 -->
-34        <activity
-34-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:23:9-27:50
-35            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
-35-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:24:17-75
-36            android:configChanges="orientation|keyboardHidden|screenSize"
-36-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:25:17-78
-37            android:exported="false"
-37-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:26:17-41
-38            android:launchMode="singleTop" />
-38-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:27:17-47
-39
-40        <meta-data
-40-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:29:9-31:35
-41            android:name="android.max_aspect"
-41-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:30:13-46
-42            android:value="2.1" />
-42-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:31:13-32
-43    </application>
-44
-45</manifest>
+10        android:targetSdkVersion="29" />
+10-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml
+11    <!-- <application android:networkSecurityConfig="@xml/network_security_config"> -->
+12    <application>
+12-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:5:5-48:19
+13
+14        <!-- 联通电信授权页 -->
+15        <!-- 如果不需要使用窗口模式，不要使用authsdk_activity_dialog主题，会出现异常动画 -->
+16        <!--
+17            如果需要使用authsdk_activity_dialog主题，则screenOrientation一定不能指定明确的方向，
+18               比如portrait、sensorPortrait，在8.0的系统上不允许窗口模式指定orientation，会发生crash，需要指定为behind，
+19               然后在授权页的前一个页面指定具体的orientation
+20        -->
+21        <!-- <activity -->
+22        <!-- android:name="com.mobile.auth.gatewayauth.LoginAuthActivity" -->
+23        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
+24        <!-- android:exported="false" -->
+25        <!-- android:launchMode="singleTop" -->
+26        <!-- android:theme="@style/authsdk_activity_dialog" -->
+27        <!-- /> -->
+28
+29        <activity
+29-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:19:9-26:15
+30            android:name="com.mobile.auth.gatewayauth.LoginAuthActivity"
+30-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:23:13-73
+31            android:configChanges="orientation|keyboardHidden|screenSize"
+31-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:20:13-74
+32            android:exported="false"
+32-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:21:13-37
+33            android:launchMode="singleTop"
+33-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:22:13-43
+34            android:screenOrientation="behind"
+34-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:25:13-47
+35            android:theme="@style/authsdk_activity_dialog" />
+35-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:24:13-59
+36
+37        <!-- 协议页面webview -->
+38        <activity
+38-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:30:9-35:54
+39            android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity"
+39-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:31:17-88
+40            android:configChanges="orientation|keyboardHidden|screenSize"
+40-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:32:17-78
+41            android:exported="false"
+41-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:33:17-41
+42            android:launchMode="singleTop"
+42-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:34:17-47
+43            android:screenOrientation="behind" />
+43-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:35:17-51
+44        <!-- 移动授权页 -->
+45        <activity
+45-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:37:9-42:19
+46            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
+46-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:38:17-75
+47            android:configChanges="orientation|keyboardHidden|screenSize"
+47-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:39:17-78
+48            android:exported="false"
+48-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:40:17-41
+49            android:launchMode="singleTop" />
+49-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:41:13-43
+50        <!-- <activity android:configChanges="orientation|keyboardHidden|screenSize|uiMode|fontScale" android:name="com.ali.onepass.RNAliOnepassModule" android:screenOrientation="sensorPortrait" -->
+51        <!-- tools:ignore="Instantiatable" /> -->
+52        <meta-data
+52-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:45:9-47:35
+53            android:name="android.max_aspect"
+53-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:46:13-46
+54            android:value="2.4" />
+54-->/Users/huowenmeng/Documents/GitLab/bnq_owner/node_modules/react-native-ali-onepass/android/src/main/AndroidManifest.xml:47:13-32
+55    </application>
+56
+57</manifest>

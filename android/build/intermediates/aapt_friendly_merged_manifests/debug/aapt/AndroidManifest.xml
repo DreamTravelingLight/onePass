@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ali.onepass"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -7,7 +8,7 @@
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="29" />
-
+    <!-- <application android:networkSecurityConfig="@xml/network_security_config"> -->
     <application>
 
         <!-- 联通电信授权页 -->
@@ -17,12 +18,22 @@
                比如portrait、sensorPortrait，在8.0的系统上不允许窗口模式指定orientation，会发生crash，需要指定为behind，
                然后在授权页的前一个页面指定具体的orientation
         -->
+        <!-- <activity -->
+        <!-- android:name="com.mobile.auth.gatewayauth.LoginAuthActivity" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
+        <!-- android:exported="false" -->
+        <!-- android:launchMode="singleTop" -->
+        <!-- android:theme="@style/authsdk_activity_dialog" -->
+        <!-- /> -->
+
         <activity
             android:name="com.mobile.auth.gatewayauth.LoginAuthActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:launchMode="singleTop"
+            android:screenOrientation="behind"
             android:theme="@style/authsdk_activity_dialog" />
+
         <!-- 协议页面webview -->
         <activity
             android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity"
@@ -36,10 +47,11 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:launchMode="singleTop" />
-
+        <!-- <activity android:configChanges="orientation|keyboardHidden|screenSize|uiMode|fontScale" android:name="com.ali.onepass.RNAliOnepassModule" android:screenOrientation="sensorPortrait" -->
+        <!-- tools:ignore="Instantiatable" /> -->
         <meta-data
             android:name="android.max_aspect"
-            android:value="2.1" />
+            android:value="2.4" />
     </application>
 
 </manifest>

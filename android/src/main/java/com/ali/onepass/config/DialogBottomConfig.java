@@ -81,13 +81,13 @@ public class DialogBottomConfig extends BaseUIConfig {
                 })
                 .build());
 
-        String appPrivacyOne = "https://test.h5.app.tbmao.com/user";
+        String appPrivacyOne = "https://dhstatic.bthome.com/prod/os/register.html";
         String appPrivacyTwo = "https://dhstatic.bthome.com/prod/os/pp.html";
         if (mConfig.hasKey(methodName2KeyName("setAppPrivacyOneUrl"))) {
             appPrivacyOne = mConfig.getString(methodName2KeyName("setAppPrivacyOneUrl"));
         }
         if (mConfig.hasKey(methodName2KeyName("setAppPrivacyTwoUrl"))) {
-            appPrivacyOne = mConfig.getString(methodName2KeyName("setAppPrivacyTwoUrl"));
+            appPrivacyTwo = mConfig.getString(methodName2KeyName("setAppPrivacyTwoUrl"));
         }
 
         mAuthHelper.setAuthUIConfig(new AuthUIConfig.Builder()
